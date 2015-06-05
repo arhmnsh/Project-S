@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My App</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/chartis.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="employee.html">STC</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <input type="text" class="form-control" placeholder="&nbsp;&nbsp;&nbsp;Search">
+            <li class=""><a>Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+      <div class="tab-pane fade active in" id="home">
+
+        <div class="ringPie" style="margin: 20px; padding: 10px;">
+          <a href="index2.html"><img src="img/ringPie.png" alt="" style="display: block; margin: 0 auto;"></a>
+        </div>
+
+        <div class="typeTrends flex-container">
+
+          <div class="trend type1Trend">
+            <span class="trendTitle">Type 1</strong></span>
+            <p><span class="trendUp"></span> 45%</p>
+          </div>
+
+          <div class="trend type1Trend">
+            <span class="trendTitle">Type 2</strong></span>
+            <p><span class="trendDown"></span> 5%</p>
+          </div>
+
+          <div class="trend type1Trend">
+            <span class="trendTitle">Type 3</strong></span>
+            <p><span class="trendDown"></span> 10%</p>
+          </div>
+
+          <div class="trend type1Trend">
+            <span class="trendTitle">Type 4</strong></span>
+            <p><span class="trendUp"></span> 25%</p>
+          </div>            
+
+        </div>
+      </div>
+
+    </div>
+
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/chartis.js"></script>
+    <script src="js/fastclick.js"></script>
+
+    <script>
+      $(function() {
+        FastClick.attach(document.body);
+
+        $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+          // console.log(e);
+          var tab = e.target;
+          
+          if(tab.text == 'stats') {
+            var pieChart1 = new Chartist.Pie('.pieChart1', {
+              series: [{
+                value: 21,
+                name: 'Series 1',
+                className: 'lightYellow'
+              }, {
+                value: 79,
+                name: 'Series 2',
+                className: 'yellow' 
+              }]
+            }).on('draw', function(data) {
+              if(data.type === 'slice') {
+                console.log(data);
+                data.element.animate({
+                  value: {
+                    dur: 500,
+                    from: data.value - 100,
+                    to: data.value,
+                    easing: Chartist.Svg.Easing.easeOutQuart
+                  }
+                });
+              }
+            });
+
+          // var reasonsChart = new Chartist.Bar('.reasonsChart', {
+          var reasonsChart = new Chartist.Bar('.ct-chart.reasonsChart', {
+            labels: ['Reason 1', 'Reason 2', 'Reason 3', 'Reason 4', 'Reason 5'],
+            series: [
+              [512, 432, 321, 721, 522]
+            ]
+          }, {
+            seriesBarDistance: 20,
+            reverseData: true,
+            horizontalBars: true,
+            axisY: {
+              offset: 70
+            }
+
+          }).on('draw', function(data) {
+            if(data.type === 'bar') {
+              data.element.attr({
+                style: 'stroke-width: 15px; fill: yellow; stroke: #f04e51;'
+              });
+            }
+          });
+
+          var statusTrendChart = new Chartist.Line('.ct-chart.statusTrendChart', {
+            labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6'],
+            series: [
+                      {
+                        value: [21, 35, 12, 45, 54, 37],
+                        className: 'firstLine'
+                      },
+                      {
+                        value: [41, 85, 52, 25, 64, 77],
+                        className: 'secondLine'
+                      }
+                    ]
+            }, {
+              low: 0,
+              showArea: true,
+              showPoint: false,
+              fullWidth: true,
+              axisY: {
+                fontSize: 12
+              }
+            });
+
+            statusTrendChart.on('draw', function(data) {
+              if(data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                  d: {
+                    begin: 2000 * data.index,
+                    dur: 2000,
+                    from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                    to: data.path.clone().stringify(),
+                    easing: Chartist.Svg.Easing.easeOutQuint
+                  }
+                });
+              }
+            });
+          }
+        });
+
+      });
+
+      
+
+
+        /*modal script*/
+        $('#empList .list-group-item').click(function(e) {
+          console.log($(this).find('.list-group-item-heading')[0].innerHTML);
+          $('#myModalLabel').html($(this).find('.list-group-item-heading')[0].innerHTML);
+        })
+        /*end modal script*/
+
+
+    </script>
+  </body>
+</html>

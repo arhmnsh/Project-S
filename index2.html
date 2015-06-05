@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My App</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/chartis.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">STC</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <input type="text" class="form-control" placeholder="&nbsp;&nbsp;&nbsp;Search">
+            <li class="active"><a>Home <span class="sr-only">(current)</span></a></li>
+            <li><a>about</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <ul class="nav nav-tabs" id="time-selector">
+      <li class="active"><a href="#stats" data-toggle="tab" aria-expanded="true">stats</a></li>
+      <li class=""><a href="#empList" data-toggle="tab" aria-expanded="false">technicians</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="stats">
+        
+        <div id="piePanel" class="panel panel-default">
+          <div class="panel-heading">Cases Distribution</div>
+          <div class="panel-body">
+            <div class="legend left-legend">
+              <h3>79<small>%</small></h3>
+              <p><span class="legendMarker">◉</span> Closed cases</p>
+            </div>
+            <div class="pieChart1 ct-square"></div>
+            <div class="legend right-legend">
+              <h3>21<small>%</small></h3>
+              <p><span class="legendMarker">◉</span> Open cases</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="statusTrendPanel" class="panel panel-default">
+          <div class="panel-heading">Cases Trend</div>
+          <div class="panel-body">
+            <div class="statusTrendChart ct-chart ct-perfect-fourth"></div>
+          </div>
+        </div>
+
+        <div id="reasonsPanel" class="panel panel-default">
+          <div class="panel-heading">Top 5 Case Reasons</div>
+          <div class="panel-body">
+            <div class="reasonsChart ct-chart ct-perfect-fourth"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="empList">
+        
+        <div class="list-group" style="margin-top: 20px;">
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Abdul-Muttalib Kazim Issa</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorGood">◉</span> <strong>Efficiency: </strong>90% &nbsp; &nbsp; <strong>Open Cases:</strong> 1</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Hamzah Tamam Boulos</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorOkay">◉</span> <strong>Efficiency: </strong>60% &nbsp; &nbsp; <strong>Open Cases:</strong> 3</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Hamzah Tamam Boulos</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorBad">◉</span> <strong>Efficiency: </strong>34% &nbsp; &nbsp; <strong>Open Cases:</strong> 5</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Ghayda Farhah Totah</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorBad">◉</span> <strong>Efficiency: </strong>39% &nbsp; &nbsp; <strong>Open Cases:</strong> 5</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Raw'ah Suhair Safar</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorGood">◉</span> <strong>Efficiency: </strong>88% &nbsp; &nbsp; <strong>Open Cases:</strong> 1</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Saif al Din Athir Mustafa</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorGood">◉</span> <strong>Efficiency: </strong>78% &nbsp; &nbsp; <strong>Open Cases:</strong> 2</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Bandar Taslim Nassar</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorOkay">◉</span> <strong>Efficiency: </strong>67% &nbsp; &nbsp; <strong>Open Cases:</strong> 3</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Sulaiman Murtadi Handal</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorGood">◉</span> <strong>Efficiency: </strong>76% &nbsp; &nbsp; <strong>Open Cases:</strong> 3</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Ruwaidah Basmah Hajjar</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorOkay">◉</span> <strong>Efficiency: </strong>56% &nbsp; &nbsp; <strong>Open Cases:</strong> 4</p>
+          </a>
+          <a class="list-group-item" data-toggle="modal" data-target="#empDetailsModal">
+            <h5 class="list-group-item-heading">Huma Makkiyah Dagher</h5>
+            <p class="list-group-item-text"><span class="employeeIndicator employeeIndicatorOkay">◉</span> <strong>Efficiency: </strong>65% &nbsp; &nbsp; <strong>Open Cases:</strong> 4</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- empDetailsModal -->
+    <div class="modal fade" id="empDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4 class="modal-title" id="myModalLabel">Abdul-Mutallib Kazim Issa</h4>
+              <img src="./img/fffabs.jpg" alt="" style="width: 100px; height: 100px; float: left; background-color: grey; display: inline-block; margin: 11px 11px 11px 0px; border-radius: 50%;">
+
+            <p class="h6"><strong>Department: </strong>Field Operations</p>
+            <p class="h6"><strong><span class="employeeIndicator employeeIndicatorOkay">◉</span> Efficiency: </strong>65%</p>
+            <p class="h6"><strong>Open Cases:</strong> 4</p>
+            <p class="h6"><strong>Closed Cases:</strong> 6</p>
+
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th colspan="2">Open Cases</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Utility</td>
+                  <td>6h</td>
+                </tr>
+                <tr>
+                  <td>Home broadband</td>
+                  <td>12h</td>
+                </tr>
+                <tr>
+                  <td>Network block</td>
+                  <td>15h</td>
+                </tr>
+                <tr>
+                  <td>New connection</td>
+                  <td>1d</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th colspan="2">Issues</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-warning">
+                  <td>Mon 28: Minor rule violation</td>
+                </tr>
+                <tr class="text-warning">
+                  <td>Sat 26: Security violation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Action</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end empDetailsModal -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/chartis.js"></script>
+    <script src="js/fastclick.js"></script>
+
+    <script>
+      $(function() {
+        FastClick.attach(document.body);
+
+            var pieChart1 = new Chartist.Pie('.pieChart1', {
+              series: [{
+                value: 21,
+                name: 'Series 1',
+                className: 'lightYellow'
+              }, {
+                value: 79,
+                name: 'Series 2',
+                className: 'yellow' 
+              }]
+            }).on('draw', function(data) {
+              if(data.type === 'slice') {
+                console.log(data);
+                data.element.animate({
+                  value: {
+                    dur: 500,
+                    from: data.value - 100,
+                    to: data.value,
+                    easing: Chartist.Svg.Easing.easeOutQuart
+                  }
+                });
+              }
+            });
+
+          // var reasonsChart = new Chartist.Bar('.reasonsChart', {
+          var reasonsChart = new Chartist.Bar('.ct-chart.reasonsChart', {
+            labels: ['Reason 1', 'Reason 2', 'Reason 3', 'Reason 4', 'Reason 5'],
+            series: [
+              [512, 432, 321, 721, 522]
+            ]
+          }, {
+            seriesBarDistance: 20,
+            reverseData: true,
+            horizontalBars: true,
+            axisY: {
+              offset: 70
+            }
+
+          }).on('draw', function(data) {
+            if(data.type === 'bar') {
+              data.element.attr({
+                style: 'stroke-width: 15px; fill: yellow; stroke: #f04e51;'
+              });
+            }
+          });
+
+          var statusTrendChart = new Chartist.Line('.ct-chart.statusTrendChart', {
+            labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6'],
+            series: [
+                      {
+                        value: [21, 35, 12, 45, 54, 37],
+                        className: 'firstLine'
+                      },
+                      {
+                        value: [41, 85, 52, 25, 64, 77],
+                        className: 'secondLine'
+                      }
+                    ]
+            }, {
+              low: 0,
+              showArea: true,
+              showPoint: false,
+              fullWidth: true,
+              axisY: {
+                fontSize: 12
+              }
+            });
+
+            statusTrendChart.on('draw', function(data) {
+              if(data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                  d: {
+                    begin: 2000 * data.index,
+                    dur: 2000,
+                    from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                    to: data.path.clone().stringify(),
+                    easing: Chartist.Svg.Easing.easeOutQuint
+                  }
+                });
+              }
+            });
+          
+      });
+
+      
+
+
+        /*modal script*/
+        $('#empList .list-group-item').click(function(e) {
+          console.log($(this).find('.list-group-item-heading')[0].innerHTML);
+          $('#myModalLabel').html($(this).find('.list-group-item-heading')[0].innerHTML);
+        })
+        /*end modal script*/
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+body {
+  padding-top: 70px;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.navbar-inverse {
+  background: #E91E63;
+}
+
+body {
+  background: #07263b;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #2cd2d3;
+}
+
+.panel {
+  background-color: transparent;
+  margin: 20px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+}
+
+.panel-body {
+  background-color: #0b3049;
+  position: relative;
+  padding: 5px 0;
+}
+
+.panel-default>.panel-heading {
+  color: rgba(255,255,255,0.9);
+  font-weight: 900;
+  font-size: 1.6em;
+}
+
+#piePanel .panel-heading {
+  background-color: #AE49B6;
+}
+
+#statusTrendPanel .panel-heading {
+  background-color: #2196f3;
+}
+
+#reasonsPanel .panel-heading {
+  background-color: #f04e51;
+}
+
+#time-selector {
+  text-align: center;
+}
+
+#time-selector li {
+  float: none;
+  display: inline-block;
+}
+
+.lightYellow, #piePanel .right-legend .legendMarker {
+  fill: #AC92EC;
+  color: #AC92EC;
+}
+
+.yellow, #piePanel .left-legend .legendMarker {
+  fill: #AE49B6;
+  color: #AE49B6;
+}
+
+.ct-chart .ct-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.35rem;
+}
+
+#piePanel .pieChart1 {
+  transform: scale(0.7);
+}
+
+#piePanel .legend {
+  position: absolute;
+  top: 22%;
+  text-align: center;
+}
+
+#piePanel .legend h3 {
+  color: white;
+  font-size: 2.4em;  
+}
+
+#piePanel .left-legend {
+  left: 3%;
+}
+
+#piePanel .right-legend {
+  right: 3%;
+}
+
+.statusTrendChart .firstLine {
+  stroke: #f66f1d;
+  fill: #f66f1d;
+}
+
+.statusTrendChart .secondLine {
+  stroke: #2196f3;
+  fill: #2196f3;
+}
+
+
+
+
+
+
+a.list-group-item .list-group-item-heading {
+  color: white;
+}
+
+.list-group-item {
+  background-color: #0b3049;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #255B80;
+  border-bottom: 1px solid #255B80;
+}
+a.list-group-item:hover, a.list-group-item:focus, a.list-group-item:active {
+  background-color: #255B80;
+}
+
+.employeeIndicatorGood {
+  color: #0BED0B;
+}
+.employeeIndicatorOkay {
+  color: #DFED0B;
+}
+.employeeIndicatorBad {
+  color: #ED500B;
+}
+
+tr>td:first-child + td {
+  text-align: right;
+}
+/*
+.typeTrends {
+  padding: 0 30px;
+}*/
+
+.trend {
+  width: 135px;
+  margin: 15px;
+  padding: 10px;
+  background-color: #0b3049;
+  color: white;
+  text-align: center;
+}
+
+.trend .trendUp:before {
+  content: '▲';
+  color: #48FFB9;
+}
+.trend .trendDown:before {
+  content: '▼';
+  color: #FF3B76;
+}
+
+.trendTitle {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.trend p {
+  font-size: 2.3em;
+  margin: 0;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+  .toggle.ios .toggle-handle { border-radius: 20px; }
+
+.toggle .btn-primary, .toggle.btn-primary{
+  background: #E91E63;
+}
+
+
+.settings {
+  padding: 0 10px;
+  color: white;
+}
+
+.settings label {
+  display: block;
+  /*margin: 20px 0;*/
+}
+
+.settings label span {
+  font-size: 1.4em;
+}
+
+.settings label .toggle {
+  float: right;
+  width: 75px !important;
+}
+
+.sliders {
+}
+.sliders label {
+  text-align: center;
+}
+
+#slider1 .slider-handle {
+  background: #f70000 
+}
+#slider2 .slider-handle {
+  background: #a4ff00 
+}
+#slider3 .slider-handle {
+  background: #3bc7da 
+}
+#slider4 .slider-handle {
+  background: #1f7bff 
+}
